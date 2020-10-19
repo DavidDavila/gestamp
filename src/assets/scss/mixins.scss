@@ -1,0 +1,30 @@
+@for $i from 0 through 100 {
+  .flex-#{$i} {
+    flex: 0 percentage($i/100);
+    max-width: percentage($i/100);
+  }
+}
+
+@for $v from 0 through 100 {
+  .flex-vertical-#{$v} {
+    flex: $v;
+  }
+}
+
+@for $h from 0 through 100 {
+  .height-#{$h} {
+    height: #{$h + "%"};
+  }
+}
+
+@for $w from 0 through 100 {
+  .width-#{$w} {
+    width: #{$w + "%"};
+  }
+}
+
+@for $margin from 0 through 100 {
+  .margin-bottom-#{$margin} {
+    margin-bottom: #{$margin + "rem"};
+  }
+}

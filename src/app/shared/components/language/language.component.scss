@@ -1,0 +1,42 @@
+#language {
+  position: relative;
+  p {
+    line-height: 1rem;
+    cursor: pointer;
+    i {
+      line-height: inherit;
+      margin: 0 0.25rem;
+      display: inline-block;
+      &.fa-chevron-down {
+        font-size: 0.5rem;
+      }
+    }
+  }
+  ul {
+    border: 0.0625rem solid var(--color-pure-gray);
+
+    position: absolute;
+    bottom: calc(100% + 0.3125rem);
+    text-align: right;
+    right: 0;
+    background-color: var(--color-gray);
+    padding: 1rem;
+    li {
+      cursor: pointer;
+      line-height: 1.5rem;
+      border-bottom: 0.0625rem solid var(--color-pure-gray);
+      a {
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+      &:last-child {
+        // border-bottom: none;
+      }
+      &:hover {
+        font-weight: 600;
+        border-bottom: 0.0938rem solid #01426a;
+      }
+    }
+  }
+}

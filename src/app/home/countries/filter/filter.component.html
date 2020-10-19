@@ -1,0 +1,31 @@
+<div id="filter">
+  <header>
+    {{'HOME.COUNTRY.FILTER.BY' | translate}}
+    <i class="fas fa-times canClose" (click)="closeTrigger.emit();"></i>
+  </header>
+  <section>
+    <ul>
+      <li (click)="filter.key = 'all'" [ngClass]="{'selected': filter.key == 'all'}">
+        All
+      </li>
+      <li (click)="filter.key = 'region'" [ngClass]="{'selected': filter.key == 'region'}">
+        Region
+      </li>
+      <li (click)="filter.key = 'adminRegion'" [ngClass]="{'selected': filter.key == 'adminRegion'}">
+        AdminRegion
+      
+      </li>
+      <li (click)="filter.key = 'incomeLevel'" [ngClass]="{'selected': filter.key == 'incomeLevel'}">
+        incomeLevel      
+      </li>
+    </ul>
+    <div class="input-container" *ngIf="filter.key !== 'all' ">
+    
+    <input type="text" [(ngModel)]="filter.value" [placeholder]="'HOME.COUNTRY.FILTER.CODE' | translate">
+    </div>
+    
+    <button class="primary canClose" (click)="filterTrigger.emit(filter);showSpinner=true">
+      <div class="loader" [ngClass]="{'visible': showSpinner}"></div>
+      {{'HOME.COUNTRY.FILTER.APPLY' | translate}}</button>
+  </section>
+</div>

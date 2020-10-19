@@ -1,0 +1,39 @@
+<section id="chart" class="card">
+  <h2>{{'HOME.CHART.TITLE' | translate}}</h2>
+  <p>
+    {{'HOME.CHART.SUBTITLE' | translate}}
+  </p>
+  <article *ngIf="countries.length>0 && indicators.length >0 && (results$ | async); else nodata">
+    <section class="list" *ngIf="!(results$ | async).data; else data">
+      <span class="error">
+        <img src="https://weakwifisolutions.com/wp-content/uploads/2019/08/error-red-cross-1.png?ezimgfmt=rs:372x372/rscb2/ng:webp/ngcb2" alt="">
+        {{'HOME.CHART.NO_DATA' | translate}}
+      </span>
+    </section>
+    <ng-template #data>
+      <ul class="list flex">
+        <ng-container *ngFor="let result of (results$ | async)?.data | groupResults:(results$ | async)?.data">
+          <li class="flex-100">
+            <h3>{{result.name}}</h3>
+            <ul>
+              <li *ngFor="let indicator of (result.indicators | keyvalue) ">
+                <h4>{{indicator.key}}</h4>
+                <app-chart [data]="indicator.value" [id]="result.name+indicator.key"></app-chart>
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </ng-template>
+
+  </article>
+  <ng-template #nodata>
+    <section class="list">
+      <span class="error">
+        <img src="data:image/png;base64,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" alt="">
+        {{'HOME.CHART.NOT_COUNTRIES' | translate}}
+      </span>
+    </section>
+  </ng-template>
+  <a class="quick-search link-s" (click)="quickSearch.emit()">Búsqueda rápida</a>
+</section>

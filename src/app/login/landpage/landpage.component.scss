@@ -1,0 +1,18 @@
+#landpage {
+  height: 100%;
+  width: 100%;
+  img {
+    width: 50%;
+    max-width: 28.125rem;
+    margin-bottom: 1rem;
+  }
+}
+app-approvement {
+  flex: 10;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+footer {
+  flex: 2;
+}

@@ -1,0 +1,14 @@
+<section id="aprovement" class="flex flex-column">
+  <article *ngIf="topics" class="flex flex-column">
+    <span class="subtitle">{{ 'LOGIN.LANDPAGE.BEWARE' | translate}}</span>
+    <ul #topicBoxes>
+      <li *ngFor="let topic of topics; let i = index" class="slider" [ngClass]="{'visible': random === i}">
+        <h2>{{topic.value}}</h2>
+        <p>{{topic.sourceNote}}</p>
+        <a (click)="getRandomTopic()"> {{ 'LOGIN.LANDPAGE.MORE_TOPICS' | translate}} </a>
+      </li>
+    </ul>
+   
+  </article>
+ 
+</section>

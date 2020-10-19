@@ -1,0 +1,62 @@
+{
+  "LOGIN": {
+    "FORM": {
+      "LOGIN":"Iniciar sesón",
+      "EMAIL":"Correo electrónico",
+      "PASSWORD":"Contraseña",
+      "LOGIN_BUTTON":"Acceder",
+      "REMEMBER":"He olvidado la contraseña",
+      "GOOGLE": "Acceder con Google",
+      "ERROR_EMAIL":"Por favor, introduce un email válido"
+    },
+    "LANDPAGE":{
+      "BEWARE":"Como tú, también nos preocupamos de :",
+      "MORE_TOPICS":"Siguiente",
+      "SIGN_UP":"¿Aún no tiene cuenta?",
+      "SIGN_UP_CTA":"Regístrate"
+    }
+  },
+  "FOOTER":"Prueba técnica",
+  "MENU":{
+    "HOME":"Inicio",
+    "LINK2":"Comparar",
+    "LINK3": "Gestión",
+    "LOGOUT":"Cerrar sesión"
+  },
+  "HOME":{
+    "COUNTRY":{
+      "TITLE":"Países",
+      "SUBTITLE":"Selecciona los países que quieres analizar",
+      "SEARCH":"Búsqueda",
+      "COUNTRY":"País",
+      "CAPITAL":"Capital",
+      "LAT":"Lat",
+      "LONG":"Long",
+      "FILTER": {
+        "BY":"Filtrar por:",
+        "APPLY":"Aplicar",
+        "CODE":"Código de la zona"
+      },
+      "ERROR": "Error al solicitar la información de países"
+    },
+    "INDICATORS":{
+      "TITLE":"Indicadores",
+      "SUBTITLE":"Selecciona para ver la información"
+    },
+    "CHART":{
+      "TITLE":"Resultados",
+      "SUBTITLE":"Analiza los datos seleccionados",
+      "NOT_COUNTRIES":"Para empezar necesitas seleccionar un país y un indicador",
+      "NO_DATA":"La información solicitada no existe"
+    },
+    "QUICK_SEARCH":{
+      "TITLE": "Búsqueda Rápida",
+      "COUNTRY_INFO":"Escriba el país",
+      "COUNTRY":"País",
+      "NO_FINDED":"No es ninguno de estos",
+      "INDICATOR_INFO":"Seleccione el indicador",
+      "SEARCH":"Buscar",
+      "ERROR":" No hemos podido recuperar la información solicitada"
+    }
+  }
+}

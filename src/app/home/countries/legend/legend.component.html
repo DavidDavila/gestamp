@@ -1,0 +1,16 @@
+<div class="legend">
+<label class="flex no-wrap">
+  <span class="flex-36" [ngClass]="{'selected': sortOrder == 'name'}" (click)="sortBy.emit('name')"> 
+    {{'HOME.COUNTRY.COUNTRY' | translate}} <i class="fas fa-caret-down"></i>
+  </span>
+  <span class="big flex-34" [ngClass]="{'selected': sortOrder == 'capitalCity'}" (click)="sortBy.emit('capitalCity')">
+    {{'HOME.COUNTRY.CAPITAL' | translate}} <i class="fas fa-caret-down"></i>
+  </span>
+  <span class="flex-13 " [ngClass]="{'selected': sortOrder == 'longitude'}" (click)="sortBy.emit('longitude')">
+    {{'HOME.COUNTRY.LONG' | translate}} <i class="fas fa-caret-down"></i>
+  </span>
+  <span class="flex-13 text-right" [ngClass]="{'selected': sortOrder == 'latitude'}" (click)="sortBy.emit('latitude')">
+    {{'HOME.COUNTRY.LAT' | translate}} <i class="fas fa-caret-down"></i>
+  </span>
+</label>
+</div>

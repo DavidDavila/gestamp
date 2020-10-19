@@ -1,0 +1,46 @@
+<article class="modal">
+  <div>
+    <i (click)="close.emit()" class="fas fa-times"></i>
+    <article *ngIf="!results ; else data">
+      <h2>{{'HOME.QUICK_SEARCH.TITLE' | translate}}</h2>
+      <h3>{{'HOME.QUICK_SEARCH.COUNTRY_INFO' | translate}}</h3>
+      <div class="input-container">
+        <input type="text" [(ngModel)]="search.country" [placeholder]="'HOME.QUICK_SEARCH.COUNTRY' | translate" (keyup)="searchTyping()">
+        <ul *ngIf="showAutocomplete" class="autocomplete">
+          <ng-container *ngFor="let posibility of posibilities">
+          <li  (click)="selectCountry(posibility)">{{(lang$ | async) === 'en'? posibility.name : posibility.translations[(lang$ | async)]}}</li>
+        </ng-container>
+        <li  (click)="showAutocomplete = false">{{'HOME.QUICK_SEARCH.NO_FINDED' | translate}}</li>
+        </ul>
+      </div>
+      <h3>{{'HOME.QUICK_SEARCH.INDICATOR_INFO' | translate}}</h3>
+      <ul #indicatorList appInfiniteScroll (scrollPosition)="scrollHandler($event)">
+        <ng-container *ngFor="let indicator of (indicators$ | async)">
+        <li *ngIf="indicator.name" class="flex">
+          <label class="flex no-wrap" (click)="select(indicator.id, $event)">
+          <span>{{indicator.name}}</span>
+        </label>
+        </li>
+      </ng-container>
+      </ul>
+      <button class="primary" [disabled]="!search.country || !search.indicator" (click)="searchResults()">{{'HOME.QUICK_SEARCH.SEARCH' | translate}}</button>
+    </article>
+    <ng-template  #data>
+      <section *ngIf="results[1]; else error">
+        <h2>{{search.country}} ({{search.indicator}})</h2>
+        <h3>Capital: {{capital}}</h3>
+        <p></p>
+        <app-chart [data]="chartData" [id]="search.indicator+search.country"></app-chart>
+      </section>
+      <ng-template #error>
+        <section>
+          <h2>{{search.country}} ({{search.indicator}})</h2>
+          <h3>Capital: {{capital}}</h3>
+          <img src="https://weakwifisolutions.com/wp-content/uploads/2019/08/error-red-cross-1.png?ezimgfmt=rs:372x372/rscb2/ng:webp/ngcb2">
+          {{'HOME.QUICK_SEARCH.ERROR' | translate}}
+        </section>
+      </ng-template>
+    </ng-template>
+   <article></article>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+
+<section id="home-page" >
+  <header class="flex">
+    <h1>{{'MENU.HOME' | translate}}</h1>
+    <a [routerLink]="['/login']">{{'MENU.LOGOUT' | translate}} <i class="fas fa-sign-out-alt"></i></a>
+  </header>
+  <section class="flex">
+    <article class="flex-35">
+      <app-countries></app-countries>
+    </article>
+    <article class="flex-30">
+      <app-indicators></app-indicators>
+    </article>
+    <article class="flex-35">
+      <app-results (quickSearch)="quickSearch=true"></app-results>
+    </article>
+  </section>
+  <app-maps></app-maps>
+  <app-quick-search (close)="quickSearch=false" *ngIf="quickSearch"></app-quick-search>
+</section>

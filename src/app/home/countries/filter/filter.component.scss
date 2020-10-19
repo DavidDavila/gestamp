@@ -1,0 +1,50 @@
+#filter {
+  position: absolute;
+  top: 0;
+  right: 1.75rem;
+  background-color: white;
+  box-shadow: 0rem 0rem 0.625rem 0.125rem var(--color-text-disabled);
+  padding: 0.625rem;
+  z-index: 1;
+  font-size: 0.75rem;
+  text-align: center;
+  header {
+    color: var(--color-menu);
+    border-bottom: 0.0625rem solid var(--color-pure-gray);
+    margin-bottom: 0.5rem;
+    text-align: left;
+    position: relative;
+    i {
+      position: absolute;
+      right: 0.5rem;
+    }
+  }
+  ul {
+    display: flex;
+    font-size: 0.625rem;
+    li {
+      cursor: pointer;
+      padding: 0.25rem;
+      color: gray;
+      &.selected {
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+  .input-container {
+    input {
+      width: 100%;
+    }
+  }
+  button {
+    margin-top: 1rem;
+  }
+  .loader {
+    width: 0.875rem;
+    height: 0.875rem;
+    display: inline-block;
+    position: absolute;
+    left: 0.75rem;
+  }
+}

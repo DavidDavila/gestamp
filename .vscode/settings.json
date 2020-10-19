@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.disableLanguages": [
+    "html"
+  ],
+ "html.format.enable": true,
+"editor.wordWrap": "off",
+"html.format.indentInnerHtml": true
+}

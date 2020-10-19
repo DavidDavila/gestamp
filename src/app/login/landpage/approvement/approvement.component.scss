@@ -1,0 +1,58 @@
+#aprovement {
+  padding: 2.5rem;
+  width: 100%;
+  position: relative;
+  article {
+    ul {
+      min-height: 50vh;
+      .slider {
+        top: 0;
+        opacity: 0;
+        will-change: opacity;
+        overflow: hidden;
+        position: absolute;
+        min-height: 50vh;
+        width: 100%;
+        &.visible {
+          opacity: 1;
+          transition: all 600ms;
+          position: relative;
+          z-index: 1;
+
+          &.fade-out {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    h2 {
+      position: relative;
+      font-size: 3.125rem;
+      line-height: 3.4375rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      color: white;
+      &:after {
+        content: "";
+        height: 0.1875rem;
+        width: 5rem;
+        position: absolute;
+        bottom: -0.3125rem;
+        background-color: white;
+        left: 0;
+      }
+    }
+    p {
+      line-height: 1.6;
+      font-size: 0.9375rem;
+      padding: 0 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  a {
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-align: right;
+  }
+}

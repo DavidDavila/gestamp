@@ -1,0 +1,35 @@
+
+  <section class="flex flex-100" id="login-page" #login>
+    <article class="align-center flex flex-40 justify-center">
+        <div>
+          <h1 class="text-center">{{('LOGIN.FORM.LOGIN' | translate)}}</h1>
+          <div class="google flex-100">
+            <app-google-login-button (onLogin)="loginAPI($event)"></app-google-login-button>
+          </div>
+          <form (ngSubmit)="formControlSubmit()" [formGroup]="loginForm" class="form-container flex" >
+           
+            <p class="flex-100 separator">O</p>
+            <div class="input-container flex-100">
+              <label for="email">{{('LOGIN.FORM.EMAIL' | translate)}}</label>
+              <input class="flex-100" formControlName="email"  type="text" 
+                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" required autocomplete="none" >
+              <span class="note">{{('LOGIN.FORM.ERROR_EMAIL' | translate)}}</span>
+            </div>
+            <div class="input-container flex-100">
+              <label for="password">{{('LOGIN.FORM.PASSWORD' | translate)}}</label>
+              <input class="flex-100" readonly #pass (focus)="this.pass.removeAttribute('readonly')" formControlName="password" id="password" type="password" name="erverv" required/>
+            </div>
+  
+            <div class="button-container flex-100 flex">
+              <input class="flex-100"  [disabled]="!loginForm.valid" name="doLogin" type="submit" [value]="('LOGIN.FORM.LOGIN_BUTTON' | translate)"/>
+            </div>
+            <a class="link-s  flex-100 disabled">{{('LOGIN.FORM.REMEMBER' | translate)}}</a>
+            
+          </form>
+        </div>
+    </article>
+    <article class="flex-60 menu flex flex-column align-center">
+     <app-landpage></app-landpage>
+    </article>
+  </section>
+

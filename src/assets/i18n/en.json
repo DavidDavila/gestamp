@@ -1,0 +1,63 @@
+{
+  "LOGIN": {
+    "FORM": {
+      "LOGIN": "Data center",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "LOGIN_BUTTON": "Login",
+      "REMEMBER": "I forgot my password",
+      "GOOGLE": "Login with Google",
+      "ERROR_EMAIL":"Please, enter a valid email"
+
+    },
+    "LANDPAGE": {
+      "BEWARE": "Like you, we also worry about:",
+      "MORE_TOPICS": "Next",
+      "SIGN_UP": "Don't have an account yet?",
+      "SIGN_UP_CTA": "Sign up"
+    }
+  },
+  "FOOTER": "Technical test",
+  "MENU":{
+    "HOME": "Home",
+    "LINK2": "Compare",
+    "LINK3": "Center",
+    "LOGOUT":"Logout"
+  },
+  "HOME":{
+    "COUNTRY": {
+      "TITLE": "Countries",
+      "SUBTITLE": "Select the countries you want to analyze",
+      "SEARCH": "Search",
+      "COUNTRY": "Country",
+      "CAPITAL": "Capital",
+      "LAT": "Lat",
+      "LONG": "Long",
+      "FILTER": {
+        "BY": "Filter by:",
+        "APPLY": "Apply",
+        "CODE": "Area code"
+      },
+      "ERROR":"Error requesting countries information"
+    },
+    "INDICATORS": {
+      "TITLE": "Indicators",
+      "SUBTITLE": "Select to see the information"
+    },
+    "CHART": {
+      "TITLE": "Results",
+      "SUBTITLE": "Analyzes the results selected",
+      "NOT_COUNTRIES": "To start you need to select a country and a indicator",
+      "NO_DATA": "The requested information does not exist"
+    },
+    "QUICK_SEARCH": {
+      "TITLE": "Quick Search",
+      "COUNTRY_INFO": "Enter the country",
+      "COUNTRY": "Country",
+      "NO_FINDED": "It is neither of these",
+      "INDICATOR_INFO": "Select the indicator",
+      "SEARCH": "Search",
+      "ERROR": "We can't retrieve the requested information"
+    }
+  }
+}

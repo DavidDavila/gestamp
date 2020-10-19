@@ -1,0 +1,33 @@
+h3 {
+  font-size: 0.9375rem;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+ul.list {
+  li {
+    margin-bottom: 1rem;
+  }
+  ul:not(.list) {
+    background-color: #f7f7f7;
+    padding: 0.625rem;
+    li {
+      margin-bottom: 1.5rem;
+    }
+    h4 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--color-menu);
+      app-chart {
+        padding: 0.625rem;
+      }
+    }
+  }
+}
+.quick-search {
+  line-height: 1.5rem;
+  display: block;
+  text-align: right;
+}

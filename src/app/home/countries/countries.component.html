@@ -1,0 +1,38 @@
+<section id="countries" class="card">
+  <h2>{{'HOME.COUNTRY.TITLE' | translate}}</h2>
+  <p>
+    {{'HOME.COUNTRY.SUBTITLE' | translate}}
+  </p>
+  <div class="input-container flex-100">
+    <input class="flex-100"  type="text" [placeholder]="'HOME.COUNTRY.SEARCH' | translate" [(ngModel)]="searchString"
+     >
+     <i class="fas fa-search"></i>
+     <a class="flex-10" (click)="filter.show=true">
+       <i class="fas fa-filter"></i>      
+    </a>
+    <app-filter *ngIf="filter.show" (onFilter)="onFilterEvent($event)" (onClose)="filter.show = false" [filter]="filter"></app-filter>
+  </div>
+  <section class="list" *ngIf="countries">
+    <ul>
+      <li class="flex legend">
+        <app-legend (sortBy)="sortOrder = $event" [sortOrder]="sortOrder"></app-legend>
+      </li>
+      <ng-container *ngFor="let country of countries | filterCountriesBy:searchString | sortCountriesBy:sortOrder; let i = index " >
+      <li class="flex" *ngIf="i <= 100">
+        <input type="checkbox" [id]="(country.iso2Code | lowercase)">
+        <label  [for]="(country.iso2Code | lowercase)" class="flex no-wrap" (click)="select({code:country.iso2Code, lat:country.latitude, long: country.longitude}, $event)">
+          <app-country-item class="flex" [country]="country"></app-country-item>
+        </label>
+      </li>
+      </ng-container>
+    </ul>
+  </section>
+</section>
+
+<article class="modal" *ngIf="showModal" (click)="showModal = false">
+  <div>
+    <div>  <i class="fas fa-times" ></i></div>
+    <img src="https://weakwifisolutions.com/wp-content/uploads/2019/08/error-red-cross-1.png?ezimgfmt=rs:372x372/rscb2/ng:webp/ngcb2" alt="">
+    <p>{{'HOME.COUNTRY.ERROR' | translate}}</p>
+  </div>
+</article>

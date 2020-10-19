@@ -1,0 +1,18 @@
+.google-button {
+  margin: 0;
+  img {
+    height: 1rem;
+    margin: 0 0.5rem 0 0;
+  }
+
+  background-color: var(--color-google);
+  border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+  padding: 0.8125rem 1rem;
+  a {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1rem;
+    text-decoration: none;
+  }
+}

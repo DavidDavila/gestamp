@@ -1,0 +1,6 @@
+
+<main class="flex-column">
+  <app-menu *ngIf="credentials$ | async"></app-menu>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</main>

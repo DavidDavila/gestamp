@@ -1,0 +1,19 @@
+<span class="flex-5"> 
+  <img  [src]="'https://flagcdn.com/16x12/'+ (country.iso2Code | lowercase) +'.png'">
+</span>
+<span class="bold big flex-30">
+ 
+  {{country.name}}
+</span>
+<span class="big flex-25">
+  {{country.capitalCity}}
+</span>
+<div class="flex-36 flex no-wrap coords">
+  <span class="flex-50 text-right">
+    {{country.longitude}}
+  </span>
+  <span class="flex-50 text-right">
+    {{country.latitude}}
+  </span>
+
+</div>

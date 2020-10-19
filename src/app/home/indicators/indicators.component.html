@@ -1,0 +1,19 @@
+<section id="indicators" class="card">
+  <h2>{{'HOME.INDICATORS.TITLE' | translate}}</h2>
+  <p>
+    {{'HOME.INDICATORS.SUBTITLE' | translate}}
+  </p>
+  <section class="list" appInfiniteScroll (scrollPosition)="scrollHandler($event)" [loading]="loading">
+    <ul>
+      <ng-container *ngFor="let indicator of (indicators$ | async)">
+      <li *ngIf="indicator.name" class="flex">
+        <input type="checkbox" [id]="(indicator.id)">
+        <label  [for]="(indicator.id)" class="flex no-wrap" (click)="select(indicator.id, $event)">
+        <span>{{indicator.name}}</span>
+      </label>
+      </li>
+    </ng-container>
+    </ul>
+  </section>
+  
+</section>
